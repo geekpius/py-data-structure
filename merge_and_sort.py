@@ -11,7 +11,7 @@ def merge_and_sort(list1, list2):
     list1_pointer = 0
     list2_pointer = 0
     merged_length = len(list1)+len(list2)
-    merged_list = []
+    merged_list = [None] * merged_length
 
     for i in range(merged_length):
         list1_ended =  len(list1) <= list1_pointer
@@ -24,10 +24,12 @@ def merge_and_sort(list1, list2):
             increment list2 pointer
         """
         if not list1_ended and (list2_ended or list1[list1_pointer] < list2[list2_pointer]):
-            merged_list.append(list1[list1_pointer])
+            # merged_list.append(list1[list1_pointer])
+            merged_list[i] = list1[list1_pointer]
             list1_pointer += 1
         else:
-            merged_list.append(list2[list2_pointer])
+            # merged_list.append(list2[list2_pointer])
+            merged_list[i] = list2[list2_pointer]
             list2_pointer+= 1
     
     return merged_list
