@@ -7,10 +7,12 @@ def merge_and_sort(list1, list2):
     create two pointers for the lists
     sum both list length as merged list length
     an empty list to contain the merged lists
+    Note you can use the commented code to achieve the same thing
     """
     list1_pointer = 0
     list2_pointer = 0
     merged_length = len(list1)+len(list2)
+    # merged_list = []
     merged_list = [None] * merged_length
 
     for i in range(merged_length):
