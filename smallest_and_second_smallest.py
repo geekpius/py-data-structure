@@ -34,17 +34,20 @@ def merge_sort(arr):
 
 import sys
 def find_first_second(arr):
-    first = second = sys.maxsize
-    for i in arr:
-        if i < first:
-            second, first = first, i
-        elif i< second and i != first:
-            second = i
+    if len(arr)>1:
+        first = second = sys.maxsize
+        for i in arr:
+            if i < first:
+                second, first = first, i
+            elif i< second and i != first:
+                second = i
 
-    if first != second:
-        return f"Two smallest elements ({first}, {second})"
-    else:
-        return f"only first number {first}"
+        if first != second:
+            return f"Two smallest elements ({first}, {second})"
+        else:
+            return f"only first number {first}"
+    
+
 
 
 
