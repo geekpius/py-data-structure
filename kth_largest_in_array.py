@@ -32,16 +32,14 @@ def reverse_merge_sort(arr):
 
 
 def find_largest(arr, k):
-    result = ''
-    i = 0
-    while i < k:
-        result+= str(arr[i])+', '
-        i += 1
-
-    return result
+    if k == 0:
+        return 0
+    if k > len(arr):
+        return 0
+    return arr[k-1]
 
 
 arr = [1, 23, 12, 9, 30, 2, 50]
 res = reverse_merge_sort(arr)
 print(res)
-print(find_largest(res, 3))
+print(find_largest(res, 8))
